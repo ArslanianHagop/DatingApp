@@ -20,6 +20,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseHttpsRedirection();
+app.UseRouting();
 
 app.MapControllers();
 

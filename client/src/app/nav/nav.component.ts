@@ -3,7 +3,7 @@ import { NgForm } from "@angular/forms";
 import { Observable, of } from "rxjs";
 
 import { AccountService } from "../_services/account.service";
-import { User } from "../_models/user.model";
+import { User } from "../_models/user";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 

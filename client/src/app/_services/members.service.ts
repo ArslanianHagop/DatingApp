@@ -90,6 +90,19 @@ export class MembersService {
     return this.http.delete(this.baseUrl + "users/delete-photo/" + photoId);
   }
 
+  addLike(username: string) {
+    // pass an empty object because its a post method
+    return this.http.post(this.baseUrl + "likes/" + username, {}); 
+  }
+
+  getLikes(predicate: string, pageNumber: number, pageSize: number) {
+    let params = this.getPaginationHeaders(pageNumber, pageSize);
+
+    params = params.append("predicate", predicate);
+
+    return this.getPaginatedResult<Member[]>(this.baseUrl + "likes", params);
+  }
+
   private getPaginationHeaders(pageNumber: number, pageSize: number) {
     let params = new HttpParams();
 
